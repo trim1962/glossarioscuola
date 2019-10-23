@@ -1,0 +1,134 @@
+% !TeX TS-program = pdflatex
+% !BIB TS-program = biber
+% !TeX encoding = UTF-8
+% !TeX spellcheck = it_IT
+% !TeX root = glossario.tex
+\documentclass[a4paper,oneside]{book}%
+% 21/01/2018 :: 22:12:46 :: \documentclass{book}%
+\usepackage{cmap}
+\frenchspacing%
+\usepackage{base}
+\usepackage[big]{layaureo}
+\usepackage{grafica}
+\usepackage{stand_class}
+\usepackage{matematica}
+\usepackage{tabelle}
+\usepackage{date}
+\usepackage{pagina}
+\usepackage{unita_misura}
+\usepackage{copyright}
+\usepackage{CDloghi}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+ \makeatletter
+ \renewcommand\frontmatter{%
+ 	\cleardoublepage
+ 	\@mainmatterfalse
+ 	%\pagenumbering{roman}
+ }
+ \renewcommand\mainmatter{%
+ 	\cleardoublepage
+ 	\@mainmattertrue
+ 	%\pagenumbering{arabic}
+ }
+ \makeatother
+
+\usepackage[grumpy,mark,markifdirty,raisemark=0.95\paperheight]{gitinfo2}  
+\usepackage[toc,page]{appendix}
+ \renewcommand{\appendixtocname}{Appendici}
+\renewcommand{\appendixpagename}{Appendici}
+\usepackage[style=italian]{csquotes}
+\usepackage[%
+style=philosophy-modern,
+annotation=true,
+hyperref,
+backend=biber,
+backref]{biblatex}
+\addbibresource{formulario.bib}
+\usepackage[italian]{varioref}
+\usepackage{hyperxmp}
+\usepackage[pdfpagelabels]{hyperref}
+\usepackage[italian]{cleveref}
+\title{Glossario}
+\author{Claudio Duchi}
+\date{\datetime}
+\hypersetup{%
+pdfencoding=auto,
+urlcolor={blue},
+pdftitle={Glossario},
+pdfsubject={Glossario},
+pdfstartview={FitH},
+pdfpagemode={UseOutlines},
+pdflicenseurl={http://creativecommons.org/licenses/by-nc-nd/3.0/},
+pdflang={it},
+pdfmetalang={it},
+pdfkeywords={Scuola},
+pdfcopyright={Copyright (C) 2019, Claudio Duchi},
+pdfcontacturl={http://breviariomatematico.altervista.org},
+pdfcontactpostcode={06128},
+pdfcontactphone={},
+pdfcontactemail={claduc},
+pdfcontactcountry={Italy},
+pdfcontactcity={Perugia},
+pdfcontactaddress={},
+pdfcaptionwriter={Claudio Duchi},
+pdfauthortitle={},%
+pdfauthor={Claudio Duchi},
+linkcolor={blue},
+colorlinks=true,
+citecolor={red},
+breaklinks,
+bookmarksopen,
+verbose,
+baseurl={http://breviariomatematico.altervista.org}
+}
+\usepackage[symbols,acronyms,translate=false,nonumberlist,toc,numberedsection,counter=chapter,automake]{glossaries-extra}
+\usepackage{glossary-mcols}
+\usepackage{glossary-longragged}
+\usepackage{glossaries-babel}
+\makeglossaries
+\renewcommand*{\glsxtrpostdescgeneral}{%
+	\ifglshasfield{see}{\glscurrententrylabel}
+	{, \glsxtrusesee{\glscurrententrylabel}}%
+	{}%
+}
+\setglossarystyle{altlistgroup}
+\loadglsentries{glossari1}
+\listfiles
+\begin{document}
+%\setcounter{page}{2}
+		\frontmatter
+		\hypersetup{pageanchor=false}
+		\begin{titlepage}\parindent=0pt
+			\centering
+	\begin{center}
+	\Lgrandedue\\[1cm]
+	\textsc{\LARGE Claudio Duchi}\\[1.2cm]
+	\HRule \\[0.4cm]
+	{ \huge \bfseries Breviario scolastico}\\[0.4cm]
+	\HRule \\[1.2cm]
+	\vfill
+	\polylogo[5.5]{15}		
+	{\large $-$\DTMnow$-$}	
+\end{center}
+{\centering
+	Release:\gitReln\ (\gitAbbrevHash)\ Autore:\gitAuthorName\ 
+	\gitCommitterDate \\
+}
+		\end{titlepage}
+
+\frontmatter
+		\CDcopyright
+		\tableofcontents
+			\mainmatter
+\cleardoublepage
+\glsaddall	
+\twocolumn
+\printglossaries
+\onecolumn		
+\nocite{*}
+ \addcontentsline{toc}{chapter}{\bibname}
+\printbibliography
+\appendix
+\chapter{Mezzi usati}
+\CDMezziUsati
+\end{document}
