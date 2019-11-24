@@ -2,13 +2,28 @@
 % !BIB TS-program = biber
 % !TeX encoding = UTF-8
 % !TeX spellcheck = it_IT
-% !TeX root = glossario.tex
-\documentclass[a4paper,oneside]{book}%
+% !TeX root = glossariob5.tex
+\documentclass[twoside,11pt]{book}
 % 21/01/2018 :: 22:12:46 :: \documentclass{book}%
+\usepackage{calc}
+
 \usepackage{cmap}
 \frenchspacing%
 \usepackage{base}
-\usepackage[big]{layaureo}
+\usepackage[dvips=false,pdftex=false,vtex=false,b5paper]{geometry}
+\geometry{textheight=\topskip+39\baselineskip,bindingoffset=5mm,
+	headheight=13.6pt}
+\usepackage[cam,a4,center,pdftex]{crop}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}                       
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}                           
+\fancyhf{}
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO,RE]{\bfseries\chaptername\ \thechapter\ --
+	\nouppercase\leftmark}
+%\usepackage[big]{layaureo}
 \usepackage{grafica}
 %\usepackage{stand_class}
 %\usepackage{matematica}
@@ -107,7 +122,7 @@ baseurl={http://breviariomatematico.altervista.org}
 	{ \huge \bfseries Breviario scolastico}\\[0.4cm]
 	\HRule \\[1.2cm]
 	\vfill
-	\polylogo[5.5]{15}		
+	\polylogo[3.5]{15}		
 	{\large $-$\DTMnow$-$}	
 \end{center}
 {\centering
