@@ -10,31 +10,31 @@
 \usepackage{base}
 \usepackage[big]{layaureo}
 \usepackage{grafica}
-%\usepackage{stand_class}
-%\usepackage{matematica}
+\usepackage{stand_class}
+\usepackage{matematica}
 \usepackage{tabelle}
 \usepackage{date}
 \usepackage{pagina}
-%\usepackage{unita_misura}
+\usepackage{unita_misura}
 \usepackage{copyright}
 \usepackage{CDloghi}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
- \makeatletter
- \renewcommand\frontmatter{%
- 	\cleardoublepage
- 	\@mainmatterfalse
- 	%\pagenumbering{roman}
- }
- \renewcommand\mainmatter{%
- 	\cleardoublepage
- 	\@mainmattertrue
- 	%\pagenumbering{arabic}
- }
- \makeatother
+\makeatletter
+\renewcommand\frontmatter{%
+	\cleardoublepage
+	\@mainmatterfalse
+	%\pagenumbering{roman}
+}
+\renewcommand\mainmatter{%
+	\cleardoublepage
+	\@mainmattertrue
+	%\pagenumbering{arabic}
+}
+\makeatother
 
 \usepackage[grumpy,mark,markifdirty,raisemark=0.95\paperheight]{gitinfo2}  
 \usepackage[toc,page]{appendix}
- \renewcommand{\appendixtocname}{Appendici}
+\renewcommand{\appendixtocname}{Appendici}
 \renewcommand{\appendixpagename}{Appendici}
 \usepackage[style=italian]{csquotes}
 \usepackage[%
@@ -52,36 +52,36 @@ backref]{biblatex}
 \author{Claudio Duchi}
 \date{\datetime}
 \hypersetup{%
-pdfencoding=auto,
-urlcolor={blue},
-pdftitle={Glossario},
-pdfsubject={Glossario},
-pdfstartview={FitH},
-pdfpagemode={UseOutlines},
-pdflicenseurl={http://creativecommons.org/licenses/by-nc-nd/3.0/},
-pdflang={it},
-pdfmetalang={it},
-pdfkeywords={Scuola},
-pdfcopyright={Copyright (C) 2019, Claudio Duchi},
-pdfcontacturl={http://breviariomatematico.altervista.org},
-pdfcontactpostcode={06128},
-pdfcontactphone={},
-pdfcontactemail={claduc},
-pdfcontactcountry={Italy},
-pdfcontactcity={Perugia},
-pdfcontactaddress={},
-pdfcaptionwriter={Claudio Duchi},
-pdfauthortitle={},%
-pdfauthor={Claudio Duchi},
-linkcolor={blue},
-colorlinks=true,
-citecolor={red},
-breaklinks,
-bookmarksopen,
-verbose,
-baseurl={http://breviariomatematico.altervista.org}
+	pdfencoding=auto,
+	urlcolor={blue},
+	pdftitle={Glossario},
+	pdfsubject={Glossario},
+	pdfstartview={FitH},
+	pdfpagemode={UseOutlines},
+	pdflicenseurl={http://creativecommons.org/licenses/by-nc-nd/3.0/},
+	pdflang={it},
+	pdfmetalang={it},
+	pdfkeywords={Algebra, geometria, analisi},
+	pdfcopyright={Copyright (C) 2019, Claudio Duchi},
+	pdfcontacturl={http://breviariomatematico.altervista.org},
+	pdfcontactpostcode={06128},
+	pdfcontactphone={},
+	pdfcontactemail={claduc},
+	pdfcontactcountry={Italy},
+	pdfcontactcity={Perugia},
+	pdfcontactaddress={},
+	pdfcaptionwriter={Claudio Duchi},
+	pdfauthortitle={},%
+	pdfauthor={Claudio Duchi},
+	linkcolor={blue},
+	colorlinks=true,
+	citecolor={red},
+	breaklinks,
+	bookmarksopen,
+	verbose,
+	baseurl={http://breviariomatematico.altervista.org}
 }
-\usepackage[symbols,acronyms,translate=false,nonumberlist,toc,numberedsection,counter=chapter,automake]{glossaries-extra}
+\usepackage[acronyms,translate=false,nonumberlist,toc,numberedsection,counter=chapter,automake]{glossaries-extra}
 \usepackage{glossary-mcols}
 \usepackage{glossary-longragged}
 \usepackage{glossaries-babel}
@@ -122,9 +122,9 @@ baseurl={http://breviariomatematico.altervista.org}
 			\mainmatter
 \cleardoublepage
 \glsaddall	
-\twocolumn
+%\twocolumn
 \printglossaries
-\onecolumn		
+%\onecolumn		
 \nocite{*}
  \addcontentsline{toc}{chapter}{\bibname}
 \printbibliography
