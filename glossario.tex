@@ -46,7 +46,7 @@ backref]{biblatex}
 \addbibresource{biblioscuola.bib}
 \usepackage[italian]{varioref}
 \usepackage{hyperxmp}
-\usepackage[pdfpagelabels]{hyperref}
+\usepackage[pdfpagelabels,plainpages=false]{hyperref}
 \usepackage[italian]{cleveref}
 \title{Glossario}
 \author{Claudio Duchi}
@@ -94,9 +94,19 @@ backref]{biblatex}
 \setglossarystyle{altlistgroup}
 \loadglsentries{glossari1}
 \listfiles
+\makeatletter
+\renewcommand\frontmatter{%
+	\cleardoublepage
+	\@mainmatterfalse
+	\pagenumbering{arabic}}
+\renewcommand\mainmatter{%
+	\cleardoublepage
+	\@mainmattertrue}
+\makeatother
 \begin{document}
-%\setcounter{page}{2}
-		\frontmatter
+
+	
+%	\frontmatter
 		\hypersetup{pageanchor=false}
 		\begin{titlepage}\parindent=0pt
 			\centering
@@ -115,11 +125,10 @@ backref]{biblatex}
 	\gitCommitterDate \\
 }
 		\end{titlepage}
-
-\frontmatter
 		\CDcopyright
 		\tableofcontents
-			\mainmatter
+			%\mainmatter
+			%\setcounter{page}{2}
 \cleardoublepage
 \glsaddall	
 %\twocolumn
@@ -128,6 +137,7 @@ backref]{biblatex}
 \nocite{*}
  \addcontentsline{toc}{chapter}{\bibname}
 \printbibliography
+%\backmatter
 \appendix
 \chapter{Mezzi usati}
 \CDMezziUsati
