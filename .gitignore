@@ -280,3 +280,5 @@ TSWLatexianTemp*
 *.sls
 *.syg
 *.ist
+*.ist
+/glossario.pdf
