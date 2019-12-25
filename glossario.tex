@@ -19,18 +19,6 @@
 \usepackage{copyright}
 \usepackage{CDloghi}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
-\makeatletter
-\renewcommand\frontmatter{%
-	\cleardoublepage
-	\@mainmatterfalse
-	%\pagenumbering{roman}
-}
-\renewcommand\mainmatter{%
-	\cleardoublepage
-	\@mainmattertrue
-	%\pagenumbering{arabic}
-}
-\makeatother
 
 \usepackage[grumpy,mark,markifdirty,raisemark=0.95\paperheight]{gitinfo2}  
 \usepackage[toc,page]{appendix}
@@ -106,7 +94,7 @@ backref]{biblatex}
 \begin{document}
 
 	
-%	\frontmatter
+	\frontmatter
 		\hypersetup{pageanchor=false}
 		\begin{titlepage}\parindent=0pt
 			\centering
@@ -125,10 +113,11 @@ backref]{biblatex}
 	\gitCommitterDate \\
 }
 		\end{titlepage}
+	\setcounter{page}{2}
 		\CDcopyright
 		\tableofcontents
-			%\mainmatter
-			%\setcounter{page}{2}
+			\mainmatter
+			
 \cleardoublepage
 \glsaddall	
 %\twocolumn
@@ -137,7 +126,7 @@ backref]{biblatex}
 \nocite{*}
  \addcontentsline{toc}{chapter}{\bibname}
 \printbibliography
-%\backmatter
+\backmatter
 \appendix
 \chapter{Mezzi usati}
 \CDMezziUsati
