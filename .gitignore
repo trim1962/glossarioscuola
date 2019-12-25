@@ -111,6 +111,9 @@ acs-*.bib
 *.glsdefs
 *.lzo
 *.lzs
+*.ist
+*.slo
+*.sls
 
 # uncomment this for glossaries-extra (will ignore makeindex's style files!)
 # *.ist
@@ -274,12 +277,6 @@ TSWLatexianTemp*
 
 # Makeindex log files
 *.lpz
-
 *.slg
-*.slg
-*.sls
-*.syg
-*.ist
-*.ist
-/glossario.pdf
-/glossario.pdf
+*.pdf
+*.pdf
