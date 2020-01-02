@@ -124,8 +124,12 @@ backref]{biblatex}
 \printglossaries
 %\onecolumn		
 \nocite{*}
- \addcontentsline{toc}{chapter}{\bibname}
-\printbibliography
+ \addcontentsline{toc}{chapter}{Bibliografia italiana}
+\printbibliography[keyword=LEX,title={Bibliografia italiana}]
+ \addcontentsline{toc}{chapter}{Bibliografia europea}
+\printbibliography[keyword=EU,title={Bibliografia europea}]
+ \addcontentsline{toc}{chapter}{Sitografia}
+\printbibliography[keyword=WWW,title={Sitografia}]
 \backmatter
 \appendix
 \chapter{Mezzi usati}
