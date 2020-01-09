@@ -12,7 +12,8 @@
 \usepackage{grafica}
 %\usepackage{stand_class}
 %\usepackage{matematica}
-%\usepackage{tabelle}
+\usepackage{indice}
+\usepackage{tabelle}
 \usepackage{date}
 \usepackage{pagina}
 %\usepackage{unita_misura}
@@ -91,9 +92,17 @@ backref]{biblatex}
 	\cleardoublepage
 	\@mainmattertrue}
 \makeatother
+\newenvironment{abstract}%
+{\cleardoublepage%
+	\thispagestyle{empty}%
+	\null \vfill\begin{center}%
+		\bfseries \abstractname \end{center}}%
+{\vfill\null}
+\include{compilauno}
+\usepackage{multirow, makecell}
 \begin{document}
-
-	
+	\pagestyle{fancy}
+	\fncyfront
 	\frontmatter
 		\hypersetup{pageanchor=false}
 		\begin{titlepage}\parindent=0pt
@@ -115,19 +124,24 @@ backref]{biblatex}
 		\end{titlepage}
 	\setcounter{page}{2}
 		\CDcopyright
+		\listoftables
 		\tableofcontents
 			\input{Introduzione}
+	\fncymain
 	\mainmatter
 \cleardoublepage
 \glsaddall	
 %\twocolumn
 \printglossaries
-%\onecolumn		
+%\onecolumn	
+\input{compiladue}	
 \nocite{*}
  \addcontentsline{toc}{chapter}{Bibliografia italiana}
 \printbibliography[keyword=LEX,title={Bibliografia italiana}]
  \addcontentsline{toc}{chapter}{Bibliografia europea}
 \printbibliography[keyword=EU,title={Bibliografia europea}]
+ \addcontentsline{toc}{chapter}{Bibliografia extra}
+\printbibliography[keyword=EXTRA,title={Bibliografia extra}]
  \addcontentsline{toc}{chapter}{Sitografia}
 \printbibliography[keyword=WWW,title={Sitografia}]
 \backmatter
