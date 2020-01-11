@@ -19,6 +19,9 @@
 %\usepackage{unita_misura}
 \usepackage{copyright}
 \usepackage{CDloghi}
+\usepackage{imakeidx}
+\makeindex[options=-s ../Mod_base/oldclaudio.sti]
+\makeindex[name=due,title=Anno]
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 \usepackage[grumpy,mark,markifdirty,raisemark=0.95\paperheight]{gitinfo2}  
@@ -75,13 +78,16 @@ backref]{biblatex}
 \usepackage{glossary-longragged}
 \usepackage{glossaries-babel}
 \makeglossaries
-\renewcommand*{\glsxtrpostdescgeneral}{%
-	\ifglshasfield{see}{\glscurrententrylabel}
-	{, \glsxtrusesee{\glscurrententrylabel}}%
-	{}%
-}
+%\renewcommand*{\glsxtrpostdescgeneral}{%
+%	\ifglshasfield{see}{\glscurrententrylabel}
+%	{, \glsxtrusesee{\glscurrententrylabel}}%
+%	{}%
+%}
+
 \setglossarystyle{altlistgroup}
-\loadglsentries{glossari1}
+\loadglsentries{glossari2}
+
+\newcommand{\mioindex}[2]{\index{#2!#1}\index[due]{#1!#2}}
 \listfiles
 \makeatletter
 \renewcommand\frontmatter{%
@@ -144,6 +150,8 @@ backref]{biblatex}
 \printbibliography[keyword=EXTRA,title={Bibliografia extra}]
  \addcontentsline{toc}{chapter}{Sitografia}
 \printbibliography[keyword=WWW,title={Sitografia}]
+\printindex
+\printindex[due]
 \backmatter
 \appendix
 \chapter{Mezzi usati}
