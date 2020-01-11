@@ -22,6 +22,7 @@
 \usepackage{imakeidx}
 \makeindex[options=-s ../Mod_base/oldclaudio.sti]
 \makeindex[name=due,title=Anno]
+\newcommand{\mioindex}[2]{\index{#2!#1}\index[due]{#1!#2}}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 \usepackage[grumpy,mark,markifdirty,raisemark=0.95\paperheight]{gitinfo2}  
@@ -87,7 +88,7 @@ backref]{biblatex}
 \setglossarystyle{altlistgroup}
 \loadglsentries{glossari2}
 
-\newcommand{\mioindex}[2]{\index{#2!#1}\index[due]{#1!#2}}
+
 \listfiles
 \makeatletter
 \renewcommand\frontmatter{%
