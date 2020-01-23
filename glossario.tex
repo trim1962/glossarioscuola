@@ -22,6 +22,7 @@
 \usepackage{imakeidx}
 \makeindex[options=-s ../Mod_base/oldclaudio.sti]
 \makeindex[name=due,title=Anno]
+\indexsetup{level=\section*,toclevel=section,noclearpage}
 \newcommand{\mioindex}[2]{\index{#2!#1}\index[due]{#1!#2}}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
@@ -37,6 +38,7 @@ hyperref,
 backend=biber,
 backref]{biblatex}
 \addbibresource{biblioscuola.bib}
+
 \usepackage[italian]{varioref}
 \usepackage{hyperxmp}
 \usepackage[pdfpagelabels,plainpages=false]{hyperref}
@@ -107,6 +109,7 @@ backref]{biblatex}
 {\vfill\null}
 \include{compilauno}
 \usepackage{multirow, makecell}
+
 \begin{document}
 	\pagestyle{fancy}
 	\fncyfront
@@ -143,17 +146,39 @@ backref]{biblatex}
 %\onecolumn	
 \input{compiladue}	
 \nocite{*}
- \addcontentsline{toc}{chapter}{Bibliografia italiana}
-\printbibliography[keyword=LEX,title={Bibliografia italiana}]
- \addcontentsline{toc}{chapter}{Bibliografia europea}
-\printbibliography[keyword=EU,title={Bibliografia europea}]
- \addcontentsline{toc}{chapter}{Bibliografia extra}
-\printbibliography[keyword=EXTRA,title={Bibliografia extra}]
+\chapter*{Bibliografia}
+\addcontentsline{toc}{chapter}{Bibliografia}
+ \addcontentsline{toc}{section}{Bibliografia italiana}
+ \section*{Bibliografia italiana}
+ \begin{description}
+ 	\item[CdS] Parere Consiglio di Stato
+ 	\item[CIRC] Circolare 
+ 	\item[DL] Decreto Legge
+ 	\item[INAIL] Circolare INAIL
+ 	\item[LEGGE] Legge
+ 	\item[LG] Linee guida
+ 	\item[NOTA] Nota ministeriale
+ \end{description}
+\printbibliography[keyword=LEX,heading=subbibliography]
+ \addcontentsline{toc}{section}{Bibliografia europea}
+ \section*{Bibliografia europea}
+ \begin{description}
+ 	\item[DE] Decisione del Parlamento Europeo e del Consiglio
+ 	\item[DI] Direttiva del Parlamento Europeo e del Consiglio
+ 	\item[RA] Raccomandazione Parlamento Europeo e del Consiglio
+ \end{description}
+\printbibliography[keyword=EU,heading=subbibliography]
+\section*{Altro}
+ \addcontentsline{toc}{section}{Altro}
+\printbibliography[keyword=EXTRA, heading=subbibliography]
  \addcontentsline{toc}{chapter}{Sitografia}
-\printbibliography[keyword=WWW,title={Sitografia}]
+\printbibliography[keyword=WWW,title={Sitografia},heading=subbibliography]
+\backmatter
+\chapter*{Indici}
+\addcontentsline{toc}{chapter}{Indici}
 \printindex
 \printindex[due]
-\backmatter
+
 \appendix
 \chapter{Mezzi usati}
 \CDMezziUsati
