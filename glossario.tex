@@ -3,7 +3,7 @@
 % !TeX encoding = UTF-8
 % !TeX spellcheck = it_IT
 % !TeX root = glossario.tex
-\documentclass[a4paper,oneside]{book}%
+\documentclass[a4paper]{book}%
 % 21/01/2018 :: 22:12:46 :: \documentclass{book}%
 \usepackage{cmap}
 \frenchspacing%
@@ -14,6 +14,8 @@
 %\usepackage{matematica}
 \usepackage{indice}
 \usepackage{tabelle}
+\usepackage{adjustbox}
+\usepackage{notoccite}
 \usepackage{date}
 \usepackage{pagina}
 %\usepackage{unita_misura}
@@ -27,9 +29,10 @@
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 \usepackage[grumpy,mark,markifdirty,raisemark=0.95\paperheight]{gitinfo2}  
-\usepackage[toc,page]{appendix}
-\renewcommand{\appendixtocname}{Appendici}
-\renewcommand{\appendixpagename}{Appendici}
+%\usepackage[toc,page]{appendix}
+%\renewcommand{\appendixtocname}{Appendici}
+%\renewcommand{\appendixpagename}{Appendici}
+
 \usepackage[style=italian]{csquotes}
 \usepackage[%
 style=philosophy-modern,
@@ -43,7 +46,7 @@ backref]{biblatex}
 \usepackage{hyperxmp}
 \usepackage[pdfpagelabels,plainpages=false]{hyperref}
 \usepackage[italian]{cleveref}
-\title{Glossario}
+\title{Nuove parole per la scuola}
 \author{Claudio Duchi}
 \date{\datetime}
 \hypersetup{%
@@ -109,7 +112,8 @@ backref]{biblatex}
 {\vfill\null}
 \include{compilauno}
 \usepackage{multirow, makecell}
-
+%\usepackage{notoccite}
+\listfiles
 \begin{document}
 	\pagestyle{fancy}
 	\fncyfront
@@ -134,10 +138,14 @@ backref]{biblatex}
 		\end{titlepage}
 	\setcounter{page}{2}
 		\CDcopyright
-		\listoftables
+		\phantomsection
 		\tableofcontents
+		\phantomsection
+			\listoftables
+			\phantomsection
 			\input{Introduzione}
 	\fncymain
+	\phantomsection
 	\mainmatter
 \cleardoublepage
 \glsaddall	
@@ -146,9 +154,13 @@ backref]{biblatex}
 %\onecolumn	
 \input{compiladue}	
 \nocite{*}
+\backmatter
+\appendix
+
+
 \chapter*{Bibliografia}
 \addcontentsline{toc}{chapter}{Bibliografia}
- \addcontentsline{toc}{section}{Bibliografia italiana}
+
  \section*{Bibliografia italiana}
  \begin{description}
  	\item[CdS] Parere Consiglio di Stato
@@ -159,9 +171,14 @@ backref]{biblatex}
  	\item[LG] Linee guida
  	\item[NOTA] Nota ministeriale
  \end{description}
+ \addcontentsline{toc}{section}{Bibliografia italiana}
 \printbibliography[keyword=LEX,heading=subbibliography]
- \addcontentsline{toc}{section}{Bibliografia europea}
+\section*{Sentenze}
+ \addcontentsline{toc}{section}{Sentenze}
+\printbibliography[keyword=SEN,heading=subbibliography]
+ 
  \section*{Bibliografia europea}
+ \addcontentsline{toc}{section}{Bibliografia europea}
  \begin{description}
  	\item[DE] Decisione del Parlamento Europeo e del Consiglio
  	\item[DI] Direttiva del Parlamento Europeo e del Consiglio
@@ -172,14 +189,15 @@ backref]{biblatex}
  \addcontentsline{toc}{section}{Altro}
 \printbibliography[keyword=EXTRA, heading=subbibliography]
  \addcontentsline{toc}{chapter}{Sitografia}
-\printbibliography[keyword=WWW,title={Sitografia},heading=subbibliography]
-\backmatter
+\printbibliography[keyword=WWW,title={Sitografia},restoreclassic,type=online,annotation=false]
+
 \chapter*{Indici}
 \addcontentsline{toc}{chapter}{Indici}
 \printindex
 \printindex[due]
 
-\appendix
+
 \chapter{Mezzi usati}
 \CDMezziUsati
+
 \end{document}
