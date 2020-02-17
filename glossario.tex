@@ -116,6 +116,7 @@ backref]{biblatex}
 \usepackage{trajan}
 \listfiles
 \begin{document}
+\let\cleardoublepage\clearpage
 	\pagestyle{fancy}
 	\fncyfront
 	\frontmatter
@@ -167,6 +168,7 @@ backref]{biblatex}
  \begin{description}
  	\item[CdS] Parere Consiglio di Stato
  	\item[CIRC] Circolare 
+ 	\item[CSR] Conferenza Stato-Regioni
  	\item[DL] Decreto Legge
  	\item[INAIL] Circolare INAIL
  	\item[LEGGE] Legge
@@ -194,7 +196,7 @@ backref]{biblatex}
 \printbibliography[keyword=BOOK,title={Pubblicazioni}]
 \chapter{Sitografia}
 % \addcontentsline{toc}{chapter}{Sitografia}
-\printbibliography[keyword=WWW,type=online,restoreclassic,annotation=false,heading=subbibliography]
+\printbibliography[keyword=WWW,type=online,restoreclassic,annotation=false,heading=subbibliography,title={Siti}]
 
 \chapter{Indici}
 %\addcontentsline{toc}{chapter}{Indici}
