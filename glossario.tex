@@ -80,15 +80,16 @@ backref]{biblatex}
 	baseurl={http://breviariomatematico.altervista.org}
 }
 \usepackage[acronyms,translate=false,nonumberlist,toc,numberedsection,counter=chapter,automake]{glossaries-extra}
+%\glossariesextrasetup{indexcrossrefs=true}
 \usepackage{glossary-mcols}
 \usepackage{glossary-longragged}
 \usepackage{glossaries-babel}
 \makeglossaries
-%\renewcommand*{\glsxtrpostdescgeneral}{%
-%	\ifglshasfield{see}{\glscurrententrylabel}
-%	{, \glsxtrusesee{\glscurrententrylabel}}%
-%	{}%
-%}
+\renewcommand*{\glsxtrpostdescgeneral}{%
+	\ifglshasfield{see}{\glscurrententrylabel}
+	{, \glsxtrusesee{\glscurrententrylabel}}%
+	{}%
+}
 
 \setglossarystyle{altlistgroup}
 \loadglsentries{glossari3}
