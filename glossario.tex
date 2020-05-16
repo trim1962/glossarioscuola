@@ -84,6 +84,7 @@ backref]{biblatex}
 \usepackage{glossary-longragged}
 \usepackage{glossaries-babel}
 \makeglossaries
+
 \renewcommand*{\glsxtrpostdescgeneral}{%
 	\ifglshasfield{see}{\glscurrententrylabel}
 	{, \glsxtrusesee{\glscurrententrylabel}}%
@@ -92,6 +93,7 @@ backref]{biblatex}
 \setglossarystyle{altlistgroup}
 \loadglsentries{glossari3}
 \loadglsentries{acronym}
+
 \makeatletter
 \renewcommand\frontmatter{%
 	\cleardoublepage
